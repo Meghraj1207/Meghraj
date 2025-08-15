@@ -1,11 +1,16 @@
-// Example: Smooth scroll for nav links
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({behavior: 'smooth'});
-        }
-    });
+// Fade-in sections when scrolled into view
+document.querySelectorAll('.card, .project, .timeline-event').forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(45px)';
 });
-// Add more interactive functions/animations as needed
+
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card, .project, .timeline-event').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 120) {
+      el.style.transition = 'opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55),transform .7s';
+      el.style.opacity = 1;
+      el.style.transform = 'translateY(0)';
+    }
+  });
+});
