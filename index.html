@@ -6,311 +6,156 @@
   <title>Meghrajsinh Parmar - Backend Developer Portfolio</title>
   <!-- Google Fonts for Modern Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary-gradient: linear-gradient(90deg, #5f2eea 0%, #42e9f5 100%);
-      --hero-bg: linear-gradient(115deg, #303e67 0%, #331e61 100%);
-      --accent: #5f2eea;
-      --surface: #201a33;
-      --text-light: #f6fafd;
-      --text-dark: #19172d;
-      --card-bg: rgba(47,33,80,0.94);
-      --form-bg: #331e61;
-      --shadow: 0 4px 32px rgba(44,24,84,0.15);
-      --rounded: 18px;
-      --transition: 0.3s cubic-bezier(.39,.39,.16,1.00);
-    }
-    body {
-      margin: 0;
-      background: var(--hero-bg);
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: var(--text-light);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    header {
-      padding: 2rem 0 5rem 0;
-      background: var(--primary-gradient);
-      box-shadow: var(--shadow);
-      text-align: center;
-      border-bottom-left-radius: 100px;
-    }
-    .hero-title {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      color: var(--text-light);
-      letter-spacing: 2px;
-      text-shadow: 0 3px 24px #0004;
-    }
-    .hero-role {
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-      color: #bcf4f8;
-      margin-bottom: 1.2rem;
-    }
-    .hero-bio {
-      font-size: 1.1rem;
-      color: #e0e6f7;
-      max-width: 540px;
-      margin-inline: auto;
-      margin-bottom: 2rem;
-    }
-    .hero-links a {
-      display: inline-block;
-      margin: 0 12px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #fff;
-      padding: 12px 22px;
-      background: rgba(47,33,80,0.24);
-      border-radius: 8px;
-      transition: background var(--transition), transform var(--transition);
-      text-decoration: none;
-    }
-    .hero-links a:hover {
-      background: var(--accent);
-      transform: translateY(-4px) scale(1.08);
-    }
+  <style>:root {
+  --primary-gradient: linear-gradient(90deg, #ff6ec7 0%, #736efe 100%);
+  --hero-bg: linear-gradient(120deg, #1a1c2c 0%, #2e1a47 100%);
+  --accent: #00f7ff;
+  --surface: rgba(255,255,255,0.07);
+  --text-light: #ffffff;
+  --text-dark: #0a0a0a;
+  --card-bg: rgba(255,255,255,0.08);
+  --form-bg: rgba(20,20,40,0.65);
+  --shadow: 0 0 25px rgba(0,247,255,0.35);
+  --rounded: 20px;
+  --transition: 0.35s ease;
+}
 
-    main {
-      margin-top: -70px;
-      padding: 1rem;
-    }
-    section {
-      margin-block: 3rem;
-      padding: 2.2rem 2rem;
-      border-radius: var(--rounded);
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      animation: fadein 1.2s cubic-bezier(.39,.39,.16,1.00);
-    }
-    @keyframes fadein {from{opacity:0;transform:translateY(32px);} to{opacity:1;transform:none;}}
-    h2 {
-      font-size: 2rem;
-      color: #fff;
-      margin-bottom: 1.6rem;
-      letter-spacing: 1.1px;
-      background: var(--primary-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-      text-shadow: none;
-    }
+/* Background with animated gradient */
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--text-light);
+  background: linear-gradient(135deg, #1a1c2c, #2e1a47, #1d1d3a);
+  background-size: 300% 300%;
+  animation: bgMove 18s ease infinite;
+}
+@keyframes bgMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .skills-list li {
-      background: var(--primary-gradient);
-      color: var(--text-dark);
-      padding: 11px 22px;
-      border-radius: 40px;
-      font-size: 1rem;
-      font-weight: 600;
-      box-shadow: 0 2px 12px #5f2eea16;
-      font-family: 'Fira Code', monospace;
-      letter-spacing: 1px;
-      transition: background var(--transition), color var(--transition);
-    }
-    .skills-list li:hover {
-      background: #fff;
-      color: var(--accent);
-    }
+/* Header */
+header {
+  padding: 2rem 0 5rem 0;
+  background: var(--primary-gradient);
+  box-shadow: var(--shadow);
+  text-align: center;
+  border-bottom-left-radius: 120px;
+  position: relative;
+}
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff6ec7, 0 0 20px #736efe; }
+  to   { text-shadow: 0 0 20px #00f7ff, 0 0 40px #ff6ec7; }
+}
+.hero-role {
+  font-size: 1.4rem;
+  color: #b7f7ff;
+}
+.hero-bio {
+  font-size: 1.1rem;
+  color: #e9eaff;
+  max-width: 540px;
+  margin-inline: auto;
+}
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-      gap: 2rem;
-    }
-    .project-card {
-      background: rgba(241,245,255,0.06);
-      border-radius: var(--rounded);
-      padding: 2rem 1.1rem 1.3rem 1.1rem;
-      box-shadow: 0 8px 24px rgba(44,24,84,0.065);
-      border: 1.4px solid #3f3468;
-      position: relative;
-      transition: box-shadow var(--transition), transform var(--transition);
-      overflow: hidden;
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    .project-card:hover {
-      box-shadow: 0 8px 38px 0 #5f2eea44;
-      transform: translateY(-8px) scale(1.025);
-      border-color: var(--accent);
-    }
-    .project-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-      color: #aaf5ff;
-      letter-spacing: 1px;
-    }
-    .project-meta {
-      font-size: 0.92rem;
-      color: #bcf4f8;
-      margin-bottom: 0.55rem;
-      font-style: italic;
-    }
-    .project-desc {
-      color: #e4eaff;
-      font-size: 1rem;
-      flex: 1 1 auto;
-    }
-    .tech-used {
-      font-family: 'Fira Code', monospace;
-      background: #282048;
-      color: #5eead4;
-      padding: 5px 14px;
-      border-radius: 14px;
-      font-size: 0.92rem;
-      margin-top: 0.7rem;
-      display: inline-block;
-    }
+/* Links neon buttons */
+.hero-links a {
+  display: inline-block;
+  margin: 0 12px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.hero-links a:hover {
+  background: var(--primary-gradient);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  transform: translateY(-4px) scale(1.08);
+}
 
-    /* Certifications (Grid Badges) */
-    .cert-grid {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .cert-badge {
-      background: #342167;
-      color: #9ae6f9;
-      border-radius: 22px;
-      padding: 0.78em 1.9em;
-      font-size: 1rem;
-      font-family: 'Fira Code', monospace;
-      font-weight: 600;
-      box-shadow: 0 1px 7px #1a73e870;
-      margin-bottom: 0.6em;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .cert-badge:before {
-      content: "✔";
-      color: #80fed8;
-      margin-right: 0.5em;
-      font-size: 1.1em;
-    }
-    /* Contact */
-    .contact-list {
-      list-style: none;
-      font-size: 1.08rem;
-      color: #e0e6f7;
-      padding: 0;
-    }
-    .contact-list li {
-      margin-bottom: 0.65em;
-    }
-    .contact-list a {
-      color: #5eead4;
-      text-decoration: underline;
-      font-weight: 600;
-      margin-left: 6px;
-    }
-    .contact-list a:hover {
-      color: var(--accent);
-    }
-    /* Project Form */
-    .form-box {
-      background: var(--form-bg);
-      border-radius: var(--rounded);
-      box-shadow: var(--shadow);
-      padding: 2.5rem 2rem 1.1rem 2rem;
-      max-width: 520px;
-      margin: 0 auto;
-      margin-top: 1.5rem;
-      border: 1.5px solid #441da6;
-    }
-    .form-box label {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #8cceff;
-      margin-top: 1.1rem;
-      display: block;
-      letter-spacing: 1px;
-    }
-    .form-box input,.form-box textarea,.form-box select {
-      width: 100%;
-      background: #e5ecfb19;
-      padding: 13px 11px;
-      font-size: 1.01rem;
-      color: #e0e6f7;
-      border: 1.2px solid #4a5b8c;
-      border-radius: 9px;
-      margin-top: 0.5em;
-      font-family: inherit;
-      margin-bottom: 0.5em;
-      transition: border var(--transition), box-shadow var(--transition);
-    }
-    .form-box input:focus,.form-box textarea:focus,.form-box select:focus {
-      border: 1.5px solid var(--accent);
-      outline: none;
-      box-shadow: 0 0 7px #5f2eea75;
-    }
-    .form-box button {
-      margin-top: 1.4em;
-      padding: 14px 0;
-      width: 100%;
-      background: var(--primary-gradient);
-      border: none;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1.1em;
-      color: var(--text-dark);
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      box-shadow: 0 5px 12px #1a9ce971;
-      transition: background var(--transition), color var(--transition), letter-spacing var(--transition);
-    }
-    .form-box button:hover {
-      background: linear-gradient(91deg, #00ffe7 0%, #5f2eea 100%);
-      color: var(--accent);
-      letter-spacing: 1.2px;
-    }
-    .form-msg {
-      color: #92face;
-      text-align: center;
-      font-size: 1.09rem;
-      margin-top: 1.1em;
-      display: none;
-    }
-    /* Footer */
-    footer {
-      margin-top: 5rem;
-      padding: 2rem 0;
-      color: #90e7ff;
-      background: #1e1831;
-      border-top-left-radius: 44px;
-      box-shadow: 0 0 44px #0007 inset;
-      text-align: center;
-      font-family: 'Fira Code', monospace;
-      font-size: 1.04rem;
-    }
-    /* Responsive */
-    @media (max-width: 900px) {
-      section, .form-box {padding: 1.2rem;}
-      .projects-grid {grid-template-columns: 1fr;}
-    }
-    @media (max-width: 600px) {
-      header {padding: 1.2rem 0 3rem 0;}
-      .hero-title {font-size: 2rem;}
-      main {margin-top: -40px;}
-      section {padding: 1rem;}
-      .form-box {padding: 1rem;}
-    }
-  </style>
+/* Section glass look */
+section {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin-block: 3rem;
+  transition: transform 0.4s ease;
+}
+section:hover {
+  transform: scale(1.015);
+}
+
+/* Skills neon pills */
+.skills-list li {
+  background: var(--primary-gradient);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 40px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+.skills-list li:hover {
+  background: #fff;
+  color: #ff6ec7;
+  box-shadow: 0 0 12px #ff6ec7;
+}
+
+/* Project cards with glow */
+.project-card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(10px);
+  border-radius: var(--rounded);
+  border: 1.4px solid rgba(255,255,255,0.2);
+  transition: var(--transition);
+}
+.project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 22px var(--accent);
+  transform: translateY(-10px) scale(1.03);
+}
+.project-title {color: #00f7ff;}
+
+/* Certifications */
+.cert-badge {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid var(--accent);
+  color: #fff;
+  transition: var(--transition);
+}
+.cert-badge:hover {
+  box-shadow: 0 0 14px var(--accent);
+  transform: scale(1.08);
+}
+
+/* Footer neon strip */
+footer {
+  background: #120f1d;
+  border-top: 2px solid var(--accent);
+  padding: 2rem 0;
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.04rem;
+  color: #b7f7ff;
+  box-shadow: 0 0 30px var(--accent) inset;
+}
+</style>
 </head>
 <body>
   <header>
