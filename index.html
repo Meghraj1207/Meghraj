@@ -1,21 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meghrajsinh Parmar - Backend Developer Portfolio</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #f0f2f8;
+      color: #222;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.2px;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    section {
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #1f2937;
+      font-size: 1.75rem;
+      border-left: 4px solid #1a73e8;
+      padding-left: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* About */
+    #about p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #4b5563;
+    }
+
+    /* Skills */
+    ul.skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    ul.skills-list li {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(55,48,163,0.2);
+    }
+
+    /* Experience & Projects */
+    .project, .experience-item {
+      margin-bottom: 1.5rem;
+    }
+    .project h3, .experience-item h3 {
+      color: #111827;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .project span, .experience-item span {
+      font-size: 0.9rem;
+      color: #6b7280;
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .project p, .experience-item p {
+      color: #374151;
+      font-size: 1rem;
+      max-width: 650px;
+    }
+    .tech-used {
+      margin-top: 0.3rem;
+      font-size: 0.9rem;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* Certifications */
+    ul.cert-list {
+      list-style: none;
+      padding-left: 15px;
+      color: #374151;
+      font-size: 1rem;
+    }
+    ul.cert-list li {
+      margin-bottom: 0.7rem;
+    }
+
+    /* Contact */
+    #contact p {
+      margin-bottom: 0.7rem;
+    }
+    #contact a {
+      font-weight: 600;
+    }
+
+    /* Project Builder Form */
+    form {
+      max-width: 700px;
+      margin-top: 1rem;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 0.3rem;
+      border-radius: 5px;
+      border: 1.5px solid #d1d5db;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 6px #2563ebaa;
+    }
+    form button {
+      margin-top: 1.5rem;
+      background-color: #1a73e8;
+      color: white;
+      font-weight: 700;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #155ab6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #1f2937;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+      ul.skills-list {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="internship.html">Internship</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <section class="hero section">
-    <img src="assets/profile.jpg" class="profile-pic" alt="Profile">
+  <header>
     <h1>Meghrajsinh Parmar</h1>
-    <h2>Backend Developer · Python · DRF Specialist</h2>
-    <p>Building scalable APIs, cloud-first architecture, and tech solutions for tomorrow. <br><span style="font-size:1.1em">“Transforming code into impact.”</span></p>
-    <a href="projects.html" class="cta-button">See My Work</a>
-  </section>
-  <footer>© 2025 Meghrajsinh Parmar</footer>
-  <script src="js/main.js"></script>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <a href="#project-builder">Project Builder</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Aspiring backend developer with expertise in Python, Node.js, and Django, committed to solving real-world challenges through innovative software solutions. Passionate about leveraging technical skills and creative thinking to deliver scalable, efficient, and impactful applications.</p>
+      <p>Location: Halol, Gujarat</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>R-Language</li>
+        <li>C</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PHP</li>
+        <li>Node.js</li>
+        <li>Flask</li>
+        <li>Django</li>
+        <li>Express</li>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+        <li>Git</li>
+        <li>Figma</li>
+        <li>VS Code</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience & Projects</h2>
+
+      <div class="experience-item">
+        <h3>Shram Samarth (Final Year Project)</h3>
+        <span>Feb 2024 – May 2024 | Backend Developer</span>
+        <p>Designed and developed a web-based platform to connect unskilled laborers with employers. Built features like QR code-based registration, flexible scheduling, and a rating system to improve user engagement. Focused on accessibility for users with limited digital literacy through an intuitive interface.</p>
+        <p class="tech-used">Tech Used: HTML, CSS, JavaScript, Node.js, MongoDB</p>
+        <p><em>Achievement: Received an A grade and presented as practical solution for labor market challenges.</em></p>
+      </div>
+
+      <div class="project">
+        <h3>Music Recommendation System</h3>
+        <p>Developed an AI-based system to create personalized music playlists leveraging KNN, collaborative filtering, and content-based algorithms using a Kaggle dataset.</p>
+        <p class="tech-used">Tech Used: Python, Supervised Learning</p>
+      </div>
+
+      <div class="project">
+        <h3>BGMI Esports Live Points Standings Model</h3>
+        <p>Python-based system for real-time esports points tracking using interlinked functions for data manipulation.</p>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>Python - HackerRank (2023-2024)</li>
+        <li>JavaScript - HackerRank (2023-2024)</li>
+        <li>Problem Solving - HackerRank (2023-2024)</li>
+        <li>Software Engineer - HackerRank (2023-2024)</li>
+        <li>Hackathon - SVIT University (2022)</li>
+        <li>Codeathon - ITMBU (2021)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:meghrajsinh012@gmail.com">meghrajsinh012@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919408639751">+91 94086 39751</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/meghrajparmar" target="_blank" rel="noopener">linkedin.com/in/meghrajparmar</a></p>
+      <p>HackerRank: <a href="https://www.hackerrank.com/meghraj1207" target="_blank" rel="noopener">hackerrank.com/meghraj1207</a></p>
+      <p>Portfolio: <a href="https://meghraj1207.github.io/portfolio/" target="_blank" rel="noopener">meghraj1207.github.io/portfolio</a></p>
+    </section>
+
+    <section id="project-builder">
+      <h2>Project Builder Form</h2>
+      <form id="projectForm">
+        <label for="projectName">Project Name *</label>
+        <input type="text" id="projectName" name="projectName" required />
+
+        <label for="description">Project Description *</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="techStack">Preferred Tech Stack *</label>
+        <select id="techStack" name="techStack" required>
+          <option value="">Select...</option>
+          <option value="Python/Node.js/Django">Python/Node.js/Django</option>
+          <option value="React/Next.js">React/Next.js</option>
+          <option value="Flask/Express">Flask/Express</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="features">Key Features Required</label>
+        <textarea id="features" name="features" placeholder="Example: User login, API integration, Admin panel"></textarea>
+
+        <label for="deadline">Deadline</label>
+        <input type="text" id="deadline" name="deadline" placeholder="E.g., 2 weeks, 1 month" />
+
+        <label for="contactEmail">Your Contact Email *</label>
+        <input type="email" id="contactEmail" name="contactEmail" required />
+
+        <button type="submit">Submit Project</button>
+      </form>
+      <p id="formMessage" style="margin-top:1rem;color:green;display:none;">Thank you! Your project details have been submitted.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Meghrajsinh Parmar | Backend Developer Portfolio
+  </footer>
+
+  <script>
+    document.getElementById('projectForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // You can extend this to send the form data to your email or backend API
+      // For demo, just showing success message & clearing the form
+      this.reset();
+      const msg = document.getElementById('formMessage');
+      msg.style.display = 'block';
+      setTimeout(() => { msg.style.display = 'none'; }, 4500);
+    });
+  </script>
 </body>
+</html>
