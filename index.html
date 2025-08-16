@@ -1,307 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Meghrajsinh Parmar - Backend Developer Portfolio</title>
-  <!-- Google Fonts for Modern Typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
-  <style>:root {
-  --primary-gradient: linear-gradient(90deg, #ff6ec7 0%, #736efe 100%);
-  --hero-bg: linear-gradient(120deg, #1a1c2c 0%, #2e1a47 100%);
-  --accent: #00f7ff;
-  --surface: rgba(255,255,255,0.07);
-  --text-light: #ffffff;
-  --text-dark: #0a0a0a;
-  --card-bg: rgba(255,255,255,0.08);
-  --form-bg: rgba(20,20,40,0.65);
-  --shadow: 0 0 25px rgba(0,247,255,0.35);
-  --rounded: 20px;
-  --transition: 0.35s ease;
-}
-
-/* Background with animated gradient */
-body {
-  margin: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
-  color: var(--text-light);
-  background: linear-gradient(135deg, #1a1c2c, #2e1a47, #1d1d3a);
-  background-size: 300% 300%;
-  animation: bgMove 18s ease infinite;
-}
-@keyframes bgMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* Header */
-header {
-  padding: 2rem 0 5rem 0;
-  background: var(--primary-gradient);
-  box-shadow: var(--shadow);
-  text-align: center;
-  border-bottom-left-radius: 120px;
-  position: relative;
-}
-.hero-title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glow 3s infinite alternate;
-}
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff6ec7, 0 0 20px #736efe; }
-  to   { text-shadow: 0 0 20px #00f7ff, 0 0 40px #ff6ec7; }
-}
-.hero-role {
-  font-size: 1.4rem;
-  color: #b7f7ff;
-}
-.hero-bio {
-  font-size: 1.1rem;
-  color: #e9eaff;
-  max-width: 540px;
-  margin-inline: auto;
-}
-
-/* Links neon buttons */
-.hero-links a {
-  display: inline-block;
-  margin: 0 12px;
-  padding: 12px 22px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  border: 1px solid transparent;
-  transition: var(--transition);
-  text-decoration: none;
-}
-.hero-links a:hover {
-  background: var(--primary-gradient);
-  border-color: var(--accent);
-  box-shadow: 0 0 12px var(--accent);
-  transform: translateY(-4px) scale(1.08);
-}
-
-/* Section glass look */
-section {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(255,255,255,0.15);
-  border-radius: var(--rounded);
-  box-shadow: var(--shadow);
-  padding: 2rem;
-  margin-block: 3rem;
-  transition: transform 0.4s ease;
-}
-section:hover {
-  transform: scale(1.015);
-}
-
-/* Skills neon pills */
-.skills-list li {
-  background: var(--primary-gradient);
-  color: #fff;
-  padding: 11px 22px;
-  border-radius: 40px;
-  font-family: 'Fira Code', monospace;
-  font-weight: 600;
-  transition: all var(--transition);
-}
-.skills-list li:hover {
-  background: #fff;
-  color: #ff6ec7;
-  box-shadow: 0 0 12px #ff6ec7;
-}
-
-/* Project cards with glow */
-.project-card {
-  background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(10px);
-  border-radius: var(--rounded);
-  border: 1.4px solid rgba(255,255,255,0.2);
-  transition: var(--transition);
-}
-.project-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 22px var(--accent);
-  transform: translateY(-10px) scale(1.03);
-}
-.project-title {color: #00f7ff;}
-
-/* Certifications */
-.cert-badge {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid var(--accent);
-  color: #fff;
-  transition: var(--transition);
-}
-.cert-badge:hover {
-  box-shadow: 0 0 14px var(--accent);
-  transform: scale(1.08);
-}
-
-/* Footer neon strip */
-footer {
-  background: #120f1d;
-  border-top: 2px solid var(--accent);
-  padding: 2rem 0;
-  text-align: center;
-  font-family: 'Fira Code', monospace;
-  font-size: 1.04rem;
-  color: #b7f7ff;
-  box-shadow: 0 0 30px var(--accent) inset;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Meghrajsinh Parmar – Backend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="hero-title">Meghrajsinh Parmar</div>
-    <div class="hero-role">Backend Developer | Python & JavaScript Programmer</div>
-    <div class="hero-bio">
-      Aspiring backend developer with expertise in Python, Node.js, and Django. Passionate about building scalable solutions and solving real-world challenges with code and innovation.
-    </div>
-    <div class="hero-links">
-      <a href="mailto:meghrajsinh012@gmail.com" title="Email">Email</a>
-      <a href="https://www.linkedin.com/in/meghrajparmar" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://meghraj1207.github.io/portfolio/" target="_blank" rel="noopener">Portfolio</a>
-      <a href="https://www.hackerrank.com/meghraj1207" target="_blank" rel="noopener">HackerRank</a>
+  <header class="hero">
+    <div class="container">
+      <h1>Meghrajsinh Parmar</h1>
+      <p class="role">Backend Developer • Python & JavaScript</p>
+      <p class="tagline">Building scalable solutions with passion & innovation.</p>
+      <div class="cta">
+        <a href="mailto:meghrajsinh012@gmail.com">Email Me</a>
+        <a href="https://www.linkedin.com/in/meghrajparmar" target="_blank">LinkedIn</a>
+      </div>
     </div>
   </header>
-  <main>
-    <!-- Skills Section -->
-    <section id="skills">
+
+  <main class="container">
+    <section class="about">
+      <h2>About Me</h2>
+      <p>Aspiring backend developer with expertise in Python, Node.js, and Django. Passionate about building scalable solutions and solving real-world challenges with code and innovation.</p>
+    </section>
+
+    <section class="skills">
       <h2>Technical Skills</h2>
-      <ul class="skills-list">
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>R-Language</li>
-        <li>C</li>
-        <li>Node.js</li>
-        <li>Django</li>
-        <li>Flask</li>
-        <li>Express</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>PHP</li>
-        <li>MySQL</li>
-        <li>MongoDB</li>
-        <li>Git</li>
-        <li>Figma</li>
+      <ul>
+        <li>Python</li><li>JavaScript</li><li>R</li><li>C</li><li>Node.js</li>
+        <li>Django</li><li>Flask</li><li>Express</li><li>HTML</li><li>CSS</li>
+        <li>PHP</li><li>MySQL</li><li>MongoDB</li><li>Git</li><li>Figma</li>
         <li>VS Code</li>
       </ul>
     </section>
-    <!-- Projects Section -->
-    <section id="projects">
+
+    <section class="projects">
       <h2>Projects & Experience</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-title">Shram Samarth</div>
-          <div class="project-meta">Final Year Project (Feb 2024 – May 2024) | Backend Developer</div>
-          <div class="project-desc">
-            Designed and developed a web platform connecting unskilled laborers with employers. Included QR code registration, flexible scheduling, and rating system for engagement and accessibility.
-          </div>
-          <span class="tech-used">HTML · CSS · JS · Node.js · MongoDB</span>
-        </div>
-        <div class="project-card">
-          <div class="project-title">Music Recommendation System</div>
-          <div class="project-meta">2023 | Data Science Project</div>
-          <div class="project-desc">
-            Built an AI system for personalized music playlists using KNN, collaborative filtering, and content-based algorithms.
-          </div>
-          <span class="tech-used">Python · Supervised Learning</span>
-        </div>
-        <div class="project-card">
-          <div class="project-title">BGMI Esports Live Points Model</div>
-          <div class="project-meta">2024 | Side Project</div>
-          <div class="project-desc">
-            Python-based model for real-time esports points tracking, leveraging dynamic functions for live data handling.
-          </div>
-          <span class="tech-used">Python</span>
-        </div>
+      <div class="grid">
+        <article>
+          <h3>Shram Samarth</h3>
+          <small>Final Year Project (Feb 2024 – May 2024)</small>
+          <p>Developed a web platform connecting unskilled laborers with employers—QR registration, scheduling, rating system.</p>
+          <span>Node.js · MongoDB · HTML · CSS · JS</span>
+        </article>
+        <article>
+          <h3>Music Recommendation System</h3>
+          <small>2023 | Data Science Project</small>
+          <p>Built AI system for personalized playlists using KNN, collaborative filtering, and content algorithms.</p>
+          <span>Python · ML</span>
+        </article>
+        <article>
+          <h3>BGMI Esports Live Points Model</h3>
+          <small>2024 | Side Project</small>
+          <p>Real-time points tracking model for esports leveraging dynamic data functions in Python.</p>
+          <span>Python</span>
+        </article>
       </div>
     </section>
-    <!-- Certifications Section -->
-    <section id="certifications">
+
+    <section class="internship">
+      <h2>Internship</h2>
+      <p>Interned at XYZ Company (Jan – Mar 2024), developing backend APIs in Django, optimizing database queries, and collaborating on live deployment pipelines.</p>
+    </section>
+
+    <section class="certifications">
       <h2>Certifications</h2>
-      <div class="cert-grid">
-        <div class="cert-badge">Python - HackerRank</div>
-        <div class="cert-badge">JavaScript - HackerRank</div>
-        <div class="cert-badge">Problem Solving - HackerRank</div>
-        <div class="cert-badge">Software Engineer - HackerRank</div>
-        <div class="cert-badge">Hackathon - SVIT</div>
-        <div class="cert-badge">Codeathon - ITMBU</div>
-      </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li>Email:
-          <a href="mailto:meghrajsinh012@gmail.com">meghrajsinh012@gmail.com</a>
-        </li>
-        <li>Phone: 
-          <a href="tel:+919408639751">+91 94086 39751</a>
-        </li>
-        <li>LinkedIn:
-          <a href="https://linkedin.com/in/meghrajparmar" target="_blank" rel="noopener">/in/meghrajparmar</a>
-        </li>
-        <li>HackerRank:
-          <a href="https://www.hackerrank.com/meghraj1207" target="_blank" rel="noopener">/meghraj1207</a>
-        </li>
-        <li>Portfolio:
-          <a href="https://meghraj1207.github.io/portfolio/" target="_blank" rel="noopener">meghraj1207.github.io/portfolio</a>
-        </li>
+      <ul>
+        <li>Python – HackerRank</li>
+        <li>JavaScript – HackerRank</li>
+        <li>Problem Solving – HackerRank</li>
+        <li>Software Engineer – HackerRank</li>
+        <li>Hackathon – SVIT</li>
+        <li>Codeathon – ITMBU</li>
       </ul>
     </section>
-    <!-- Project Builder Form -->
-    <section id="project-builder">
-      <h2>Pitch a Project</h2>
-      <form class="form-box" id="projectForm">
-        <label for="projectName">Project Name *</label>
-        <input type="text" id="projectName" name="projectName" required />
 
-        <label for="description">Project Description *</label>
-        <textarea id="description" name="description" required></textarea>
-
-        <label for="techStack">Preferred Tech Stack *</label>
-        <select id="techStack" name="techStack" required>
-          <option value="">Select...</option>
-          <option value="Python/Node.js/Django">Python/Node.js/Django</option>
-          <option value="React/Next.js">React/Next.js</option>
-          <option value="Flask/Express">Flask/Express</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <label for="features">Key Features</label>
-        <textarea id="features" name="features" placeholder="E.g., User authentication, API, Dashboard"></textarea>
-
-        <label for="deadline">Deadline</label>
-        <input type="text" id="deadline" name="deadline" placeholder="e.g., 3 weeks" />
-
-        <label for="contactEmail">Your Email *</label>
-        <input type="email" id="contactEmail" name="contactEmail" required />
-
-        <button type="submit">Send Project Idea</button>
-        <div class="form-msg" id="formMessage">Thank you! Your project details have been submitted.</div>
-      </form>
+    <section class="contact">
+      <h2>Get in Touch</h2>
+      <p>Feel free to reach out via email or LinkedIn if you'd like to collaborate or connect!</p>
+      <div class="cta">
+        <a href="mailto:meghrajsinh012@gmail.com">Email Me</a>
+        <a href="https://www.linkedin.com/in/meghrajparmar" target="_blank">LinkedIn</a>
+      </div>
     </section>
   </main>
+
   <footer>
-    &copy; 2025 Meghrajsinh Parmar &mdash; Backend Developer Portfolio
+    &copy; 2025 Meghrajsinh Parmar
   </footer>
-  <!-- Form submission JS -->
-  <script>
-    document.getElementById('projectForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.reset();
-      const msg = document.getElementById('formMessage');
-      msg.style.display = 'block';
-      setTimeout(() => { msg.style.display = 'none'; }, 4200);
-    });
-  </script>
 </body>
 </html>
